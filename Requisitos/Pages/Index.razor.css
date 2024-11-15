@@ -1,0 +1,323 @@
+﻿body {
+    font: 400 1em/1.5 "Neuton";
+    background-color: #2C1B47;
+    background: #2C1B47;
+    text-align: center;
+    margin: 0
+}
+
+p {
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    display: inline-block;
+    padding: 1.5em 0em;
+    position: absolute;
+    top: 140px; /* Ajusta la posición vertical */
+    left: 50%;
+    width: 40em;
+    margin: 0 0 0 -20em;
+}
+
+span{
+    font: 700 5em/1 Grafiti, sans-serif;
+    text-align:center;
+    letter-spacing: 2;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+    /* Clip Background Image */
+
+    background: url("statics/fondoLetras.png") repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+}
+
+
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.custom-background {
+    background-color: transparent; /* Cambia este color */
+    width: 100%;
+    min-height: 100vh;
+}
+@font-face {
+    font-family: Grafiti; /* El nombre que usarás en tu CSS */
+    src: url('fonts/satan.ttf') format('truetype'); /* Ajusta el formato si usas otro tipo de archivo */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: storm; /* El nombre que usarás en tu CSS */
+    src: url('fonts/storm.ttf') format('truetype'); /* Ajusta el formato si usas otro tipo de archivo */
+    font-weight: normal;
+    font-style: normal;
+}
+header {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 115px;
+    z-index: 10;
+    background-image: url(statics/corazon2.png);
+    background-position: center top;
+    background-size: auto 200px;
+    background-repeat: repeat-x;
+}
+
+    header .inner {
+        max-width: 1060px;
+        margin: 0 auto;
+        display: flex;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    header .logo {
+        display: block;
+        width: 152px;
+        height: 260px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+        text-align: center;
+    }
+
+        header .logo img {
+            width: 90px;
+            margin-top: 0px;
+        }
+
+    header nav {
+        display: none;
+    }
+
+        header nav a {
+            font-family: storm;
+            color: #58545B;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-decoration: none;
+            margin: 0 18px;
+            display: flex;
+            align-items: center; /* Centra el texto verticalmente */
+            justify-content: center; /* Opcional: centra el texto horizontalmente */
+            height: 30px;
+        }
+
+            header nav a.active,
+            header nav a:hover {
+                color: #1C252C;
+            }
+
+@media screen and (min-width: 800px) {
+    header nav {
+        display: flex; /* Cambia a flex para alinear los enlaces horizontalmente */
+        justify-content: center; /* Centra los enlaces dentro del contenedor nav */
+        align-items: center;
+    }
+}
+
+header .burger {
+    display: block;
+    position: relative;
+    top: -6px;
+    padding-left: 30px;
+}
+
+    header .burger:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 2px;
+        background: white;
+        box-shadow: 0 12px 0 0 white, 0 6px 0 0 white;
+    }
+
+@media screen and (min-width: 800px) {
+    header .burger {
+        display: none;
+    }
+}
+
+header .donate-link {
+    width: 72px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    font-size: 20px;
+    padding-bottom: 6px;
+    font-family: storm;
+    color: #58545B;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 18px;
+    text-decoration: none; /* Elimina cualquier subrayado predeterminado */
+}
+
+    header .donate-link.active,
+    header .donate-link:hover {
+        color: #1C252C;
+        text-decoration: none; /* Asegúrate de que no haya subrayado al hacer hover */
+    }
+
+
+
+.container-cards {
+    position: absolute;
+    top: 230px; /* Ajusta para colocar el slide debajo de <p> */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+    background-color: transparent;
+    margin: 2em auto 0 auto; /* Agrega margen superior para que baje */
+    padding: 2em 0; /* Opcional, para ajustar mejor el espacio */
+}
+
+/* Ajustes del contenedor .slides */
+.slides {
+    padding: 0;
+    width: 450px;
+    height: 460px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* Evita desbordamiento de las imágenes */
+}
+
+    .slides * {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    .slides input {
+        display: none;
+    }
+
+.slide-container {
+    display: block;
+}
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: auto;
+    height: 460px;
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: all 0.7s ease-in-out;
+}
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+    }
+
+/* Ajustes para navegación */
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, 0.3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label {
+    opacity: 0.5;
+}
+
+.nav label:hover {
+    opacity: 1;
+}
+
+.nav .next {
+    right: 0;
+}
+
+input:checked + .slide-container .slide {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label {
+    display: block;
+}
+
+.nav-dots {
+    width: 70%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+    .nav-dots .nav-dot {
+        top: -5px;
+        width: 11px;
+        height: 11px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+        background-color: white;
+    }
+
+        .nav-dots .nav-dot:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+    background-color: blueviolet;
+}
