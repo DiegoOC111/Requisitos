@@ -1,0 +1,67 @@
+﻿@page "/MiPerfil"
+@using Requisitos.Clases
+
+@code {
+    // Crear la instancia de PerfilUsuario con datos de ejemplo
+    private PerfilUsuario perfilUsuario = new PerfilUsuario(
+        "Diego",
+        "diego@ejemplo.com",
+        "https://phantom-elmundo.unidadeditorial.es/f28ccc74a7710d4f501cb730c50273d3/resize/828/f/jpg/assets/multimedia/imagenes/2023/01/30/16750836214047.jpg", // Foto de perfil
+        new DateTime(2021, 5, 15), // Fecha de registro
+        new List<Pedido>
+                {
+            new Pedido(1, "Zapatillas", new DateTime(2024, 10, 10), true),
+            new Pedido(2, "Pañuelo", new DateTime(2024, 9, 5), false),
+            new Pedido(3, "Pantalones", new DateTime(2024, 8, 25), false)
+                }
+    );
+}
+
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="@perfilUsuario.FotoPerfilUrl" alt="Avatar" class="avatar" />
+        <h1>@perfilUsuario.Nombre</h1>
+        <p>@perfilUsuario.CorreoElectronico</p>
+    </div>
+    <div class="profile-details">
+        <h3>Historial de Pedidos</h3>
+        @if (perfilUsuario.HistorialPedidos.Any())
+        {
+            <div class="pedido-card-container">
+                @foreach (var pedido in perfilUsuario.HistorialPedidos)
+                {
+                    <div class="pedido-card">
+                        <h3>Pedido #@pedido.Id</h3>
+                        <p><strong>Descripción:</strong> @pedido.Descripcion</p>
+                        <p><strong>Fecha:</strong> @pedido.FechaPedido.ToString("dd/MM/yyyy")</p>
+                        @if (pedido.Activo)
+                        {
+                            <button class="rastrear-btn" @onclick="() => RastrearPedido(pedido.Id)">Rastrear Pedido</button>
+                        }
+                        else
+                        {
+                            <p><strong>Estado:</strong> Entregado</p>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No tienes pedidos anteriores.</p>
+        }
+
+        <h3>Fecha de Registro</h3>
+        <p>@perfilUsuario.FechaRegistro.ToString("MMMM dd, yyyy")</p>
+    </div>
+</div>
+
+@code {
+    // Método para rastrear el pedido
+    private void RastrearPedido(int idPedido)
+    {
+        // Lógica para rastrear el pedido, por ejemplo:
+        Console.WriteLine($"Rastreando el pedido con ID: {idPedido}");
+        // Aquí podrías redirigir a otra página o mostrar un modal con el estado del pedido.
+    }
+}

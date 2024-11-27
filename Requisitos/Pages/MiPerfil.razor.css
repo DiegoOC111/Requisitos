@@ -1,0 +1,121 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .profile-header .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-header h1 {
+        font-size: 28px;
+        color: #333;
+    }
+
+    .profile-header p {
+        font-size: 18px;
+        color: #666;
+    }
+
+.profile-details {
+    margin-top: 20px;
+}
+
+    .profile-details h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .profile-details p {
+        font-size: 16px;
+        color: #555;
+    }
+
+
+/* Contenedor de las Cards */
+.pedido-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo para cada Card */
+.pedido-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .pedido-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Título de cada Card */
+    .pedido-card h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    /* Descripción del pedido */
+    .pedido-card p {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 15px;
+    }
+
+/* Botón para rastrear el pedido */
+.rastrear-btn {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+    .rastrear-btn:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        box-shadow: 0 6px 15px rgba(0, 86, 179, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .rastrear-btn:active {
+        background-color: #004085;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+        transform: translateY(2px);
+    }
